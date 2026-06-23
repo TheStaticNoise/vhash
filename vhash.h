@@ -51,7 +51,7 @@ static inline uint64_t v_hash(const char* rd, uint64_t seed) {
     hash ^= ++i + ((temp & 0x0001BEE8) >> 7);
     temp = seed;
     seed = temp & 63;
-    if (seed < VHASH_INTESITY) {
+    if (seed <= VHASH_INTESITY) {
         return hash;
     }
     for (int a = 0; a < VHASH_INTESITY; a++) {
